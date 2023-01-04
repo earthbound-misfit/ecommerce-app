@@ -11,7 +11,7 @@ import { Outerwear } from './routes/Shop/Outerwear/outerwear.component';
 import { Shoes } from '../src/routes/Shop/Shoes/shoes.component';
 import { About } from '../src/routes/About/about.component';
 import { Login } from '../src/routes/Login/login.component';
-import { SignUp } from '../src/routes/SignUp/signup.component';
+import { SignUpForm } from '../src/components/SignUp/signup-form.component';
 import { Contact } from '../src/routes/Contact/contact.component'
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
       <Route path='about' element={<About />} />
         <Route path='contact' element={<Contact />} />
   
-      <Route path='signup' element={<SignUp />} />
+      <Route path='signup' element={<SignUpForm />} />
       <Route path='login' element={<Login />} />
     </Route>
   </Routes>

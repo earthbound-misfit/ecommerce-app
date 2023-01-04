@@ -1,0 +1,31 @@
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+
+.signup-header {
+  font-family: 'Comfortaa';
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.submit-button {
+  align-self: center;
+  justify-self: end;
+  font-family: 'Comfortaa';
+  background-color: rgb(22, 152, 155);
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.signup form button:hover, .signup form button:focus {
+  background: rgb(234, 239, 240);
+  color: #034958;
+  outline: 0;
+  transition: background-color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+
+}

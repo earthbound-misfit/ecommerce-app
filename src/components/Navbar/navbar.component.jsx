@@ -25,19 +25,19 @@ export const Navbar = () => {
       />
     </Link>
        
-          <Typography variant="h1" component="div" sx={{ flexGrow: 1, fontSize: '2.5rem', fontFamily: 'Roboto', textDecoration: 'none' }}>
+          <Typography variant="h1" component="div" sx={{ flexGrow: 1, fontSize: '2.5rem', fontFamily: 'Comfortaa', textDecoration: 'none' }}>
             BROKE NOMAD
           </Typography>
 
           <div>
        
-            <Button sx={{mx: 5, fontWeight: 'bold', fontSize: '1.5rem'}} color="inherit" href='/shop'>Shop</Button>
-    
-            <Button sx={{mx: 1 }} color="inherit" href='/about'>About</Button>
-   
-            <Button color="inherit" href='/signup'>Sign Up</Button>
+            <Button sx={{mx: 5, fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'Comfortaa'}} color="inherit" href='/shop'>Shop</Button>
 
-            <Button color="inherit" href='/login'>Login</Button>
+            <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/blog'>Blog</Button>
+    
+            <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/about'>About</Button>
+
+            <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/login'>Login</Button>
      
           </div>
         </Toolbar>

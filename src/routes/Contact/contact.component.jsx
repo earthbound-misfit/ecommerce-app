@@ -1,7 +1,9 @@
 import React from 'react';
-import { Input } from '@mui/material'
-import './contact.styles.scss'
+import { Input } from '@mui/material';
+import '../../components/Button/button.styles.scss';
 import { Navbar } from '../../components/Navbar/navbar.component';
+import './contact.styles.scss'
+import { Button } from '../../components/Button/button.component'
 
 
 
@@ -39,8 +41,8 @@ export const Contact = () => {
             <textarea name="message" rows="5" id="message"></textarea>
           </p>
           <p class="required-field">Required field <span>*</span></p>
-          <p class="submit-button">
-            <button type="submit">Submit</button>
+          <p>
+            <Button>Submit</Button>
           </p>
         </form>
     </div>
