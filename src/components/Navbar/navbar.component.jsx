@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,8 +8,12 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link'
 import { Outlet } from 'react-router-dom';
 import logo from '../../assets/images/broke-nomad-image-only.jpg'
-
+import { UserContext } from '../../contexts/user.component'
+import { signOutUser } from '../../utils/firebase/firebase.utils';
+ 
 export const Navbar = () => {
+  const { currentUser } = useContext(UserContext)
+  
   return (
     <>
     <Box sx={{ flexGrow: 1, opacity: '70%' }}>
@@ -37,8 +42,12 @@ export const Navbar = () => {
     
             <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/about'>About</Button>
 
-            <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth'>Login</Button>
-     
+            {currentUser ? (
+                <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth' onClick={signOutUser}>Sign Out</Button>
+            ) : (
+              <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth'>Login</Button>
+            )}
+
           </div>
         </Toolbar>
       </AppBar>
