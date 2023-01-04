@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/navbar.component'
 import Adventurer from '../../assets/images/undraw_adventure_map_hnin.svg'
 import { Button } from '../../components/Button/button.component'
@@ -15,7 +16,9 @@ export const About = () => {
       
           <h1 className='header' style={{marginTop: '10px', color: 'rgb(0,72,82)', fontFamily: 'Comfortaa', textAlign: 'center', textTransform: 'uppercase'}}>About Broke Nomad</h1>
           <p style={{width: '400px', textAlign: 'left', fontFamily: 'Comfortaa'}}>Broke Nomad is a community for travelers on a budget. Products and Blog for the budget-conscious traveler. Sign up to be a contributor on the blog, or shop for travel clothes and accessories at the shop!</p>
-          <Button href='/contact'>Contact Us</Button>
+          <Link style={{textDecoration: 'none'}} to='/contact'>
+            <Button style={{width: '100%'}}>Contact Us</Button>
+          </Link>
         </div>
         {/* <div style={{display: 'block', margin: 'auto', marginTop: '10px'}}>
         

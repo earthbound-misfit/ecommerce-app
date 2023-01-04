@@ -2,8 +2,9 @@ import React from 'react';
 import { Input } from '@mui/material';
 import '../../components/Button/button.styles.scss';
 import { Navbar } from '../../components/Navbar/navbar.component';
-import './contact.styles.scss'
-import { Button } from '../../components/Button/button.component'
+import './contact.styles.scss';
+import { Button } from '../../components/Button/button.component';
+import { Link } from 'react-router-dom';
 
 
 
@@ -41,9 +42,9 @@ export const Contact = () => {
             <textarea name="message" rows="5" id="message"></textarea>
           </p>
           <p class="required-field">Required field <span>*</span></p>
-          <p>
+          <Link style={{textDecoration: 'none'}}>
             <Button>Submit</Button>
-          </p>
+          </Link>
         </form>
     </div>
   </div>

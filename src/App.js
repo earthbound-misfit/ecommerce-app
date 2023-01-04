@@ -10,7 +10,7 @@ import { Accessories } from '../src/routes/Shop/Accessories/accessories.componen
 import { Outerwear } from './routes/Shop/Outerwear/outerwear.component';
 import { Shoes } from '../src/routes/Shop/Shoes/shoes.component';
 import { About } from '../src/routes/About/about.component';
-import { Login } from '../src/routes/Login/login.component';
+import { Authentication } from './routes/Authentication/authentication.component';
 import { SignUpForm } from '../src/components/SignUp/signup-form.component';
 import { Contact } from '../src/routes/Contact/contact.component'
 
@@ -28,10 +28,9 @@ const App = () => {
         <Route path='shoes' element={<Shoes />} />
       </Route>
       <Route path='about' element={<About />} />
-        <Route path='contact' element={<Contact />} />
-  
+      <Route path='contact' element={<Contact />} />
       <Route path='signup' element={<SignUpForm />} />
-      <Route path='login' element={<Login />} />
+      <Route path='auth' element={<Authentication />} />
     </Route>
   </Routes>
   );

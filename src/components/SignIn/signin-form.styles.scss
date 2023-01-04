@@ -1,14 +1,20 @@
-.sign-up-container {
+.sign-in-container {
   display: flex;
   flex-direction: column;
   width: 380px;
   margin: auto;
 }
 
-.signup-header {
+.sign-in-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signin-header {
   font-family: 'Comfortaa';
   font-weight: 700;
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
 .submit-button {
@@ -22,10 +28,11 @@
   color: white;
 }
 
-.signup form button:hover, .signup form button:focus {
+.signin form button:hover, .signin form button:focus {
   background: rgb(234, 239, 240);
   color: #034958;
   outline: 0;
   transition: background-color 0.3s ease-out;
   transition: color 0.3s ease-out;
+
 }

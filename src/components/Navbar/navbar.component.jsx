@@ -37,7 +37,7 @@ export const Navbar = () => {
     
             <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/about'>About</Button>
 
-            <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/login'>Login</Button>
+            <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth'>Login</Button>
      
           </div>
         </Toolbar>
