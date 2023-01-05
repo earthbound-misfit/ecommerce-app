@@ -1,0 +1,26 @@
+.cart-container {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .shopping-icon {
+    width: 28px;
+    height: 28px;
+    color: white;
+    // background-color: rgba(255,255,255,0.5);
+    padding: 2px 0px 3px 0px;
+    border-radius: 3px;
+  }
+
+  .item-count {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    bottom: 12px;
+  }
+}

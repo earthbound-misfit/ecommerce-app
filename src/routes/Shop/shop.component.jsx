@@ -1,20 +1,18 @@
-import React from 'react'
-import { Navbar } from '../../components/Navbar/navbar.component';
-import { HomeDecor } from './HomeDecor/homedecor.component'
-import { Tops } from './Tops/tops.component'
-import { Bottoms } from './Bottoms/bottoms.component'
-import { Outerwear } from './Outerwear/outerwear.component'
-import { Accessories } from './Accessories/accessories.component'
-import { Shoes } from './Shoes/shoes.component'
+import { useContext } from 'react';
+import Product from '../../components/Product/product.component'
+import { ProductsContext } from '../../contexts/products.component';
+import './shop.styles.scss'
+
 
 export const Shop = () => {
+  const { products } = useContext(ProductsContext);
+
   return (
-    <>
-    <Navbar />
-    
-
-    </>
-  )
-}
-
+    <div className='products-container'>
+      {products.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
+    </div>
+  );
+};
 

@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { Cart } from '../../routes/Cart/cart.component';
+import { CartDropMenu } from '../CartDropMenu/cart-drop-menu.component';
+import { CartContext, CartProvider } from '../../contexts/cart.context';
 import { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,13 +13,14 @@ import { Outlet } from 'react-router-dom';
 import logo from '../../assets/images/broke-nomad-image-only.jpg'
 import { UserContext } from '../../contexts/user.component'
 import { signOutUser } from '../../utils/firebase/firebase.utils';
+import './navbar.styles.scss'
  
 export const Navbar = () => {
   const { currentUser } = useContext(UserContext)
-  
+  const { isCartOpen } = useContext(CartContext)
   return (
     <>
-    <Box sx={{ flexGrow: 1, opacity: '70%' }}>
+    <Box sx={{ flexGrow: 1, opacity: '90%', zIndex: 2, position: 'fixed'}}>
       <AppBar sx={{ backgroundColor: 'rgb(0,72,82)', padding: '20px' }} position="fixed">
         <Toolbar>
           <Link href="/">
@@ -34,21 +38,26 @@ export const Navbar = () => {
             BROKE NOMAD
           </Typography>
 
-          <div>
-       
-            <Button sx={{mx: 5, fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'Comfortaa'}} color="inherit" href='/shop'>Shop</Button>
+          
+           
+                <Button sx={{mx: 5, fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'Comfortaa'}} color="inherit" href='/shop'>Shop</Button>
+              
+              
+                <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/about'>About</Button>
+              
+            
+                {currentUser ? (
+                  <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth' onClick={signOutUser}>Sign Out</Button>
+                ) : (
+                <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth'>Login</Button>
+                )}
+              
+                  <Cart />
 
-            <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/blog'>Blog</Button>
-    
-            <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/about'>About</Button>
-
-            {currentUser ? (
-                <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth' onClick={signOutUser}>Sign Out</Button>
-            ) : (
-              <Button sx={{fontFamily: 'Comfortaa'}} color="inherit" href='/auth'>Login</Button>
-            )}
-
-          </div>
+             
+            {isCartOpen && 
+              <CartDropMenu />
+            }
         </Toolbar>
       </AppBar>
     </Box>

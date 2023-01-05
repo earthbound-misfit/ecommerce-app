@@ -56,7 +56,7 @@ export const SignUpForm = () => {
     <div className="sign-up-container">
       <h2 className="signup-header">I do not have an account</h2>
       <h5>Sign up with your email and password</h5>
-      <div>
+
       <form onSubmit={handleSubmit}>
 
         <FormInput 
@@ -98,7 +98,6 @@ export const SignUpForm = () => {
         <Button className="button-container" style={{width: '100%'}} type="submit">Sign Up</Button>
 
       </form>
-      </div>
     </div>
   )
 }
