@@ -1,7 +1,7 @@
 .cart-drop-menu-container {
   position: absolute;
-  width: 240px;
-  height: 240px;
+  width: 280px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -26,5 +26,6 @@
 
   button {
     margin-top: auto;
+    width: 85%;
   }
 }

@@ -1,10 +1,13 @@
 import './product.styles.scss'
 import { Button } from '../Button/button.component'
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/cart.context'
 
 
-const Product = ({product}) => {
-  
+export const Product = ({product}) => {
   const { name, price, imageUrl } = product;
+  const { addItemToCart } = useContext(CartContext);
+  const addToCart = () => addItemToCart(product);
 
   return (
     <>
@@ -12,10 +15,10 @@ const Product = ({product}) => {
       <img src={imageUrl} alt={`${name}`}/>
         <div className='footer'>
           <span className='name'>{name}</span>
-          <span className='price'>{price}</span>
+          <span className='price'>${price}</span>
         </div>
 
-        <Button>Add to Cart</Button>
+        <Button onClick={addToCart}>Add to Cart</Button>
 
     </div>
   </>
@@ -24,4 +27,3 @@ const Product = ({product}) => {
   
 };
 
-export default Product;
