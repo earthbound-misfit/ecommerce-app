@@ -1,8 +1,18 @@
+.shop-container {
+  margin-top: 10%;
+}
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 50px;
   row-gap: 50px;
-  margin: 10% 5% 5%;
   z-index: -1;
+  margin: 0 5% 5%;
+}
+
+.title {
+  color: black;
+  font-family: 'Comfortaa';
+  font-size: 2rem;
 }

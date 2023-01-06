@@ -1,0 +1,13 @@
+.outer-container {
+  margin-top: 20%;
+  color: black;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 50px;
+  border: none;
+  margin-top: 10%;
+}

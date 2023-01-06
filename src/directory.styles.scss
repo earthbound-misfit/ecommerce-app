@@ -2,15 +2,15 @@
   font-family: 'Comfortaa'
 }
 
-.categories-container {
+.directories-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 9%;
+  margin-top: 12%;
 }
 
-.category-container {
+.directory-container {
   min-width: 30%;
   height: 300px;
   flex: 1 1 auto;
@@ -30,7 +30,7 @@
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .category-body-container {
+    & .directory-body-container {
       opacity: 1.0;
     }
   }
@@ -54,7 +54,7 @@
     background-position: center;
   }
 
-  .category-body-container {
+  .directory-body-container {
     height: 77px;
     width: 13%;
     padding: 0 25px;

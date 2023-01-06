@@ -1,20 +1,21 @@
 
-import HomeDecor from '../../assets/images/home-decor.jpg'
+import Dresses from '../../assets/images/dresses.jpg'
 import Outerwear from '../../assets/images/outerwear.jpg'
 import Tops from '../../assets/images/tops.jpg'
 import Bottoms from '../../assets/images/bottoms.jpg'
 import Accessories from '../..//assets/images/accessories.jpg'
 import Shoes from '../../assets/images/shoes.jpg'
-import '../../categories.styles.scss'
+import '../../directory.styles.scss'
 import { Navbar } from '../../components/Navbar/navbar.component';
 import Link from '@mui/material/Link'
+
 
 export const Home = () => {
   const categories = [
     {
       id: 1,
-      title: 'Home Decor',
-      image: `${HomeDecor}`,
+      title: 'Dresses',
+      image: `${Dresses}`,
     },
     {
       id: 2,
@@ -47,14 +48,14 @@ export const Home = () => {
   return (
     <>
     <Navbar /> 
-    <div className="categories-container">
+    <div className="directories-container">
       {categories.map(({ id, title, image }) => (
-        <div key={id} className="category-container">
+        <div key={id} className="directory-container">
       <div className='background-image' style={{
            backgroundImage: `url(${image})`
       }}/>
-      <div className="category-body-container">
-        <Link sx={{textDecoration: 'none'}} href={`/shop/${title.split(" ").join("")}`}><h2>{title}</h2></Link>
+      <div className="directory-body-container">
+        <Link sx={{textDecoration: 'none'}} href={`/shop/${title.split(" ").join("").toLowerCase()}`}><h2>{title}</h2></Link>
       </div>
     </div>
       ))}
