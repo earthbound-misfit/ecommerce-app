@@ -5,7 +5,7 @@ import Tops from '../../assets/images/tops.jpg'
 import Bottoms from '../../assets/images/bottoms.jpg'
 import Accessories from '../..//assets/images/accessories.jpg'
 import Shoes from '../../assets/images/shoes.jpg'
-import '../../directory.styles.scss'
+import '../../catalog.styles.scss'
 import { Navbar } from '../../components/Navbar/navbar.component';
 import Link from '@mui/material/Link'
 
@@ -48,13 +48,13 @@ export const Home = () => {
   return (
     <>
     <Navbar /> 
-    <div className="directories-container">
+    <div className="catalog-outer-container">
       {categories.map(({ id, title, image }) => (
-        <div key={id} className="directory-container">
+        <div key={id} className="catalog-container">
       <div className='background-image' style={{
            backgroundImage: `url(${image})`
       }}/>
-      <div className="directory-body-container">
+      <div className="catalog-body-container">
         <Link sx={{textDecoration: 'none'}} href={`/shop/${title.split(" ").join("").toLowerCase()}`}><h2>{title}</h2></Link>
       </div>
     </div>

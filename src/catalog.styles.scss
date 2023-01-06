@@ -2,7 +2,7 @@
   font-family: 'Comfortaa'
 }
 
-.directories-container {
+.catalog-outer-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -10,7 +10,7 @@
   margin-top: 12%;
 }
 
-.directory-container {
+.catalog-container {
   min-width: 30%;
   height: 300px;
   flex: 1 1 auto;
@@ -54,7 +54,7 @@
     background-position: center;
   }
 
-  .directory-body-container {
+  .catalog-body-container {
     height: 77px;
     width: 13%;
     padding: 0 25px;

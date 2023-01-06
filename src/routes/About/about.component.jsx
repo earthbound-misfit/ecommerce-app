@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar/navbar.component'
 import Adventurer from '../../assets/images/undraw_adventure_map_hnin.svg'
 import { Button } from '../../components/Button/button.component'
-import '../../directory.styles.scss'
+import '../../catalog.styles.scss'
 
 export const About = () => {
   return (

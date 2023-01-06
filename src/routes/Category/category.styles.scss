@@ -1,5 +1,5 @@
 .outer-container {
-  margin-top: 20%;
+  margin-top: 10%;
   color: black;
 }
 
@@ -9,5 +9,12 @@
   column-gap: 20px;
   row-gap: 50px;
   border: none;
-  margin-top: 10%;
+}
+
+.title-header {
+  font-family: 'Comfortaa';
+  font-size: 2rem;
+  color: black;
+  margin-top: 13%;
+  text-align: center;
 }

@@ -7,17 +7,18 @@ import React from 'react'
 
 export const Category = () => {
   const { category } = useParams();
-  const { categoriesMap, title } = useContext(CategoriesContext);
-  // const products = categoriesMap[category];
+  const { categoriesMap } = useContext(CategoriesContext);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
     setProducts(categoriesMap[category])
   }, [category, categoriesMap])
 
+  const title = category.toUpperCase()
+  
   return (
    <div className='outer-container'>
-    <h2 key={category.id}>{title}</h2>
+    <h2 className='title-header'>{title}</h2>
    <div className='category-container'>
       {products &&
         products.map((product) => <Product key={product.id} product={product} />)
