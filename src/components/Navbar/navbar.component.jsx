@@ -1,8 +1,7 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import { Cart } from '../../routes/Cart/cart.component';
 import { CartDropMenu } from '../CartDropMenu/cart-drop-menu.component';
-import { CartContext, CartProvider } from '../../contexts/cart.context';
-import { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,13 +10,15 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link'
 import { Outlet } from 'react-router-dom';
 import logo from '../../assets/images/broke-nomad-image-only.jpg'
-import { UserContext } from '../../contexts/user.component'
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 import './navbar.styles.scss'
+import { selectCurrentUser } from '../../redux/user/user.selector';
+import { selectIsCartOpen } from '../../redux/cart/cart.selector'
+
  
 export const Navbar = () => {
-  const { currentUser } = useContext(UserContext)
-  const { isCartOpen } = useContext(CartContext)
+  const currentUser = useSelector(selectCurrentUser);
+  const isCartOpen = useSelector(selectIsCartOpen);
   return (
     <>
     <Box sx={{ flexGrow: 1, opacity: '90%', zIndex: 2, position: 'fixed'}}>

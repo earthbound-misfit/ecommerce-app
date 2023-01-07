@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { 
-  createUserDocFromAuth, 
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils';
+import { Link } from 'react-router-dom';
 import { FormInput } from '../FormInput/form-input.component';
 import './signin-form.styles.scss'
 import { Button } from '../Button/button.component'
@@ -77,9 +77,14 @@ export const SignInForm = () => {
           name="password" 
           value={password} 
         />
+        
         <div className='sign-in-button-container'>
+        <Link className='redirect' to='/shop'>
           <Button type="submit">Sign In</Button>
+        </Link>
+        <Link className='redirect' to='/shop'>
           <Button onClick={signInWithGoogle} buttonType="google" type="button">Google Sign In</Button>
+        </Link>
         </div>
 
       </form>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { createAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../../utils/firebase/firebase.utils';
 import { FormInput } from '../FormInput/form-input.component';
 import './signup-form.styles.scss'
 import { Button } from '../Button/button.component'
-import { UserContext } from '../../contexts/user.component'
 
 const defaultFormFields = {
   displayName: '',
@@ -49,7 +49,7 @@ export const SignUpForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormFields({...formFields, [name]: value })
+    setFormFields({...formFields, [name]: value });
   }
 
   return (
@@ -94,9 +94,9 @@ export const SignUpForm = () => {
           name="confirmPassword" 
           value={confirmPassword} 
         />
-
+      <Link className='redirect' to='/shop'>
         <Button className="button-container" style={{width: '100%'}} type="submit">Sign Up</Button>
-
+      </Link>
       </form>
     </div>
   )

@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './App'
-import { UserProvider } from './contexts/user.component'
-import { CategoriesProvider } from './contexts/categories.component';
-import { CartProvider } from './contexts/cart.context';
+import { store } from './redux/store';
+// import { Elements } from '@stripe/react-stripe-js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+  
+              {/* <Elements> */}
+              <App />
+              {/* </Elements> */}
+
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

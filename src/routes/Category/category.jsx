@@ -1,18 +1,19 @@
 import './category.styles.scss'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { useContext, useState, useEffect } from 'react'
-import { CategoriesContext } from '../../contexts/categories.component'
+import { useState, useEffect } from 'react'
 import { Product } from '../../components/Product/product.component'
 import React from 'react'
+import { selectCategoriesMap } from '../../redux/categories/categories.selector'
 
 export const Category = () => {
   const { category } = useParams();
-  const { categoriesMap } = useContext(CategoriesContext);
+  const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
-    setProducts(categoriesMap[category])
-  }, [category, categoriesMap])
+    setProducts(categoriesMap[category]);
+  }, [category, categoriesMap]);
 
   const title = category.toUpperCase()
   
