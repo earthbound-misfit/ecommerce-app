@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../../utils/firebase/firebase.utils';
 import { FormInput } from '../FormInput/form-input';
 import './signup-form.styles.scss'
 import { Button } from '../Button/button'
 
-const defaultFormFields = {
+const defaultForm = {
   displayName: '',
   email: '',
   password: '',
@@ -14,11 +14,11 @@ const defaultFormFields = {
 }
 
 export const SignUpForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] = useState(defaultForm);
   const { displayName, email, password, confirmPassword } = formFields;
   
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
+    setFormFields(defaultForm);
   }
 
   const handleSubmit = async (event) => {
@@ -38,11 +38,11 @@ export const SignUpForm = () => {
       
     } catch(error) {
       if(error.code === 'auth/email-already-in-user') {
-        alert('Cannot create user, email already in use.');
+        alert('Sorry, email is already in use. Sign in or try another email.');
       } else {
         console.log(error);
       }
-      console.log('User creation encountered an error', error);
+      console.log('Error: Cannot create user.', error);
     }
 
   };
@@ -50,6 +50,13 @@ export const SignUpForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({...formFields, [name]: value });
+  }
+
+  const navigate = useNavigate();
+
+  const handleRedirect = event => {
+    event.preventDefault();
+    navigate('/shop')
   }
 
   return (
@@ -94,9 +101,9 @@ export const SignUpForm = () => {
           name="confirmPassword" 
           value={confirmPassword} 
         />
-      <Link className='redirect' to='/shop'>
-        <Button className="button-container" style={{width: '100%'}} type="submit">Sign Up</Button>
-      </Link>
+      {/* <Link className='redirect' to='/shop'> */}
+        <Button onClick={handleRedirect} className="button-container" style={{width: '100%'}} type="submit">Sign Up</Button>
+      {/* </Link> */}
       </form>
     </div>
   )

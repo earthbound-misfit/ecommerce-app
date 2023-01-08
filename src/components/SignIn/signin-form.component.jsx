@@ -9,17 +9,17 @@ import { FormInput } from '../FormInput/form-input';
 import './signin-form.styles.scss'
 import { Button } from '../Button/button'
 
-const defaultFormFields = {
+const defaultForm = {
   email: '',
   password: '',
 }
 
 export const SignInForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] = useState(defaultForm);
   const { email, password } = formFields;
 
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
+    setFormFields(defaultForm);
   }
 
    const signInWithGoogle = async () => {
@@ -37,10 +37,10 @@ export const SignInForm = () => {
     } catch(error) {
       switch(error.code) {
         case 'auth/wrong-password':
-          alert("Incorrect password, please check your input.");
+          alert("Incorrect password/email combination, please try again.");
           break 
         case 'auth/user-not-found':
-          alert("No user found for this email.");
+          alert("No user found for this email. Please create an account.");
           break;
         default:
           console.log(error)
@@ -55,7 +55,7 @@ export const SignInForm = () => {
 
   return (
     <div className="sign-in-container">
-      <h2 className="signin-header">Already have an account?</h2>
+      <h2 className="signin-header">Already part of the tribe?</h2>
       <h5>Sign in with email and password</h5>
       <div>
       <form onSubmit={handleSubmit}>
