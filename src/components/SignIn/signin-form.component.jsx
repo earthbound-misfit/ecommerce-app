@@ -79,9 +79,9 @@ export const SignInForm = () => {
         />
         
         <div className='sign-in-button-container'>
-        <Link className='redirect' to='/shop'>
+   
           <Button type="submit">Sign In</Button>
-        </Link>
+
         <Link className='redirect' to='/shop'>
           <Button onClick={signInWithGoogle} buttonType="google" type="button">Google Sign In</Button>
         </Link>

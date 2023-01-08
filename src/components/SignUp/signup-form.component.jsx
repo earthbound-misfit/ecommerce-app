@@ -21,6 +21,13 @@ export const SignUpForm = () => {
     setFormFields(defaultForm);
   }
 
+  const navigate = useNavigate();
+
+  const handleRedirect = event => {
+    event.preventDefault();
+    navigate('/shop')
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
@@ -35,6 +42,8 @@ export const SignUpForm = () => {
 
         await createUserDocFromAuth(user, { displayName });
         resetFormFields();
+        alert('SIGN UP SUCCESSFUL! You are now signed in to your account.')
+        navigate('/shop')
       
     } catch(error) {
       if(error.code === 'auth/email-already-in-user') {
@@ -43,6 +52,8 @@ export const SignUpForm = () => {
         console.log(error);
       }
       console.log('Error: Cannot create user.', error);
+      alert('Sign up unsuccessful. Please check your input and try again.')
+      navigate('/auth')
     }
 
   };
@@ -50,13 +61,6 @@ export const SignUpForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({...formFields, [name]: value });
-  }
-
-  const navigate = useNavigate();
-
-  const handleRedirect = event => {
-    event.preventDefault();
-    navigate('/shop')
   }
 
   return (
@@ -102,7 +106,7 @@ export const SignUpForm = () => {
           value={confirmPassword} 
         />
       {/* <Link className='redirect' to='/shop'> */}
-        <Button onClick={handleRedirect} className="button-container" style={{width: '100%'}} type="submit">Sign Up</Button>
+        <Button className="button-container" style={{width: '100%'}} type="submit">Sign Up</Button>
       {/* </Link> */}
       </form>
     </div>
