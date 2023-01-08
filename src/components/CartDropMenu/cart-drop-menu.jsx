@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './cart-drop-menu.styles.scss';
-import { Button } from '../Button/button.component';
-import { CartItem } from '../CartItem/cart-item.component';
-import { selectCartItems } from '../../redux/cart/cart.selector';
+import { Button } from '../Button/button';
+import { CartItem } from '../CartItem/cart-item';
+import { selectCartItems } from '../../redux/cart/cart-selectors';
 import { useNavigate } from 'react-router-dom'
 
 export const CartDropMenu = () => {

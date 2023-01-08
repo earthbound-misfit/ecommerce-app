@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar } from '../../components/Navbar/navbar.component';
+import { Navbar } from '../../components/Navbar/navbar';
 import { useEffect } from 'react';
 import { getRedirectResult } from 'firebase/auth';
 import { 

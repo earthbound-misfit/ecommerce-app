@@ -1,8 +1,8 @@
 
 import './checkout-item.styles.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectCartItems } from '../../redux/cart/cart.selector'
-import { clearItemFromCart, addItemToCart, removeItemFromCart } from '../../redux/cart/cart.action'
+import { selectCartItems } from '../../redux/cart/cart-selectors'
+import { clearItemFromCart, addItemToCart, removeItemFromCart } from '../../redux/cart/cart-actions'
 
 export const CheckoutItem = ( {cartItem} ) => {
   const { name, imageUrl, price, quantity } = cartItem;

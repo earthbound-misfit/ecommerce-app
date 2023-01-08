@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
 
-import { selectCartTotal } from '../../redux/cart/cart.selector';
-import { selectCurrentUser } from '../../redux/user/user.selector';
-import { Button } from '../Button/button.component'
+import { selectCartTotal } from '../../redux/cart/cart-selectors';
+import { selectCurrentUser } from '../../redux/user/user-selectors';
+import { Button } from '../Button/button'
 
 import './payment.styles.scss';
 

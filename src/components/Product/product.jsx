@@ -1,8 +1,8 @@
 import './product.styles.scss'
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCartItems } from '../../redux/cart/cart.selector';
-import { addItemToCart } from '../../redux/cart/cart.action';
-import { Button } from '../Button/button.component'
+import { selectCartItems } from '../../redux/cart/cart-selectors';
+import { addItemToCart } from '../../redux/cart/cart-actions';
+import { Button } from '../Button/button'
 
 
 export const Product = ({product}) => {

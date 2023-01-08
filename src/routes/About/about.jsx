@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar } from '../../components/Navbar/navbar.component'
+import { Navbar } from '../../components/Navbar/navbar'
 import Adventurer from '../../assets/images/undraw_adventure_map_hnin.svg'
-import { Button } from '../../components/Button/button.component'
+import { Button } from '../../components/Button/button'
 import '../../catalog.styles.scss'
 
 export const About = () => {

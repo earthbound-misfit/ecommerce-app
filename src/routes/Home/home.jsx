@@ -6,7 +6,7 @@ import Bottoms from '../../assets/images/bottoms.jpg'
 import Accessories from '../..//assets/images/accessories.jpg'
 import Shoes from '../../assets/images/shoes.jpg'
 import '../../catalog.styles.scss'
-import { Navbar } from '../../components/Navbar/navbar.component';
+import { Navbar } from '../../components/Navbar/navbar';
 import Link from '@mui/material/Link'
 
 

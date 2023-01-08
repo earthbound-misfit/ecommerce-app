@@ -2,9 +2,9 @@ import './category.styles.scss'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Product } from '../../components/Product/product.component'
+import { Product } from '../../components/Product/product'
 import React from 'react'
-import { selectCategoriesMap } from '../../redux/categories/categories.selector'
+import { selectCategoriesMap } from '../../redux/categories/categories-selectors'
 
 export const Category = () => {
   const { category } = useParams();

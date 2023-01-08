@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import { getCategoriesAndDocs } from '../../utils/firebase/firebase.utils';
-import { setCategoriesMap } from '../../redux/categories/categories.action'
+import { setCategoriesMap } from '../../redux/categories/categories-actions'
 import './shop.styles.scss'
-import { Navbar } from '../../components/Navbar/navbar.component'
+import { Navbar } from '../../components/Navbar/navbar'
 import { CategoriesPreview } from '../CategoriesPreview/categories-preview';
 import { Category } from '../Category/category';
 

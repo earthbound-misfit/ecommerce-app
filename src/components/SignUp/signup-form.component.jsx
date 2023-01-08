@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../../utils/firebase/firebase.utils';
-import { FormInput } from '../FormInput/form-input.component';
+import { FormInput } from '../FormInput/form-input';
 import './signup-form.styles.scss'
-import { Button } from '../Button/button.component'
+import { Button } from '../Button/button'
 
 const defaultFormFields = {
   displayName: '',

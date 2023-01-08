@@ -1,8 +1,8 @@
-import './categorypreview.styles.scss'
-import { Product } from '../Product/product.component'
+import './product-category-preview.styles.scss'
+import { Product } from '../Product/product'
 import { Link } from 'react-router-dom';
 
-export const CategoryPreview = ({ title, products }) => {
+export const ProductCategoryPreview = ({ title, products }) => {
   return (
     <div className='category-preview-container'>
       <h2 className='category-title'>

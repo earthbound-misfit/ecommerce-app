@@ -5,9 +5,9 @@ import {
   signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils';
 import { Link } from 'react-router-dom';
-import { FormInput } from '../FormInput/form-input.component';
+import { FormInput } from '../FormInput/form-input';
 import './signin-form.styles.scss'
-import { Button } from '../Button/button.component'
+import { Button } from '../Button/button'
 
 const defaultFormFields = {
   email: '',

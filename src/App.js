@@ -4,15 +4,15 @@ import {
   createUserDocFromAuth,
 } from '../src/utils/firebase/firebase.utils';
 import { useDispatch } from 'react-redux';
-import { setCurrentUser } from './redux/user/user.action';
+import { setCurrentUser } from './redux/user/user-actions';
 import { Routes, Route } from 'react-router-dom';
-import { Home } from './routes/Home/home.component';
-import { Navbar } from './components/Navbar/navbar.component'
-import { About } from '../src/routes/About/about.component';
-import { Authentication } from './routes/Authentication/authentication.component';
-import { Contact } from '../src/routes/Contact/contact.component';
-import { Shop } from '../src/routes/Shop/shop.component';
-import { Checkout } from '../src/routes/Checkout/checkout.component'
+import { Home } from './routes/Home/home';
+import { Navbar } from './components/Navbar/navbar'
+import { About } from '../src/routes/About/about';
+import { Authentication } from './routes/Authentication/authentication';
+import { Contact } from '../src/routes/Contact/contact';
+import { Shop } from '../src/routes/Shop/shop';
+import { Checkout } from '../src/routes/Checkout/checkout'
 
 const App = () => {
   const dispatch = useDispatch();

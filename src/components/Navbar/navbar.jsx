@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { Cart } from '../../routes/Cart/cart.component';
-import { CartDropMenu } from '../CartDropMenu/cart-drop-menu.component';
+import { Cart } from '../../routes/Cart/cart';
+import { CartDropMenu } from '../CartDropMenu/cart-drop-menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,8 +12,8 @@ import { Outlet } from 'react-router-dom';
 import logo from '../../assets/images/broke-nomad-image-only.jpg'
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 import './navbar.styles.scss'
-import { selectCurrentUser } from '../../redux/user/user.selector';
-import { selectIsCartOpen } from '../../redux/cart/cart.selector'
+import { selectCurrentUser } from '../../redux/user/user-selectors';
+import { selectIsCartOpen } from '../../redux/cart/cart-selectors'
 
  
 export const Navbar = () => {

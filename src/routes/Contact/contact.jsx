@@ -1,9 +1,9 @@
 import React from 'react';
 import { Input } from '@mui/material';
 import '../../components/Button/button.styles.scss';
-import { Navbar } from '../../components/Navbar/navbar.component';
+import { Navbar } from '../../components/Navbar/navbar';
 import './contact.styles.scss';
-import { Button } from '../../components/Button/button.component';
+import { Button } from '../../components/Button/button';
 import { Link } from 'react-router-dom';
 
 

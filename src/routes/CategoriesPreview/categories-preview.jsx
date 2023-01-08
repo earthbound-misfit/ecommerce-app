@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { Navbar } from '../../components/Navbar/navbar.component'
-import { selectCategoriesMap } from '../../redux/categories/categories.selector';
-import { CategoryPreview } from '../../components/CategoryPreview/categorypreview'
+import { Navbar } from '../../components/Navbar/navbar'
+import { selectCategoriesMap } from '../../redux/categories/categories-selectors';
+import { ProductCategoryPreview } from '../../components/ProductCategoryPreview/product-category-preview'
 
 
 export const CategoriesPreview = () => {
@@ -13,7 +13,7 @@ export const CategoriesPreview = () => {
         {Object.keys(categoriesMap).map((title) => {
           const products = categoriesMap[title];
           return (
-          <CategoryPreview key={title} title={title} products={products} />
+          <ProductCategoryPreview key={title} title={title} products={products} />
           );
         })}
     </div>
