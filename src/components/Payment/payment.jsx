@@ -11,23 +11,47 @@ import './payment.styles.scss';
 export const Payment = () => {
   const stripe = useStripe();
   const elements = useElements();
-  const amount = useSelector(selectCartTotal)
+  const amount = useSelector(selectCartTotal);
+  const currentUser = useSelector(selectCurrentUser);
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   const handlePayment = async (event) => {
     event.preventDefault();
-    if(!stripe || !elements) {
+    if (!stripe || !elements) {
       return;
     }
-
+    setIsProcessingPayment(true);
     const response = await fetch('/.netlify/functions/create-payment-intent', {
       method: 'post',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({amount: 10000})
-    }).then( res => res.json());
-    console.log(response)
-  }
+      body: JSON.stringify({ amount: amount * 100 }),
+    }).then((res) => {
+      return res.json();
+    });
+
+    const clientSecret = response.paymentIntent.client_secret;
+
+    const paymentResult = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+        billing_details: {
+          name: currentUser ? currentUser.displayName : 'Yihua Zhang',
+        },
+      },
+    });
+
+    setIsProcessingPayment(false);
+
+    if (paymentResult.error) {
+      alert(paymentResult.error.message);
+    } else {
+      if (paymentResult.paymentIntent.status === 'succeeded') {
+        alert('Payment Successful!');
+      }
+    }
+  };
 
   return (
     <>
