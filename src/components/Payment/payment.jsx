@@ -37,7 +37,7 @@ export const Payment = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser ? currentUser.displayName : 'Yihua Zhang',
+          name: currentUser ? currentUser.displayName : 'Kelly Karner',
         },
       },
     });
