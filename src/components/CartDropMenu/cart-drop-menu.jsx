@@ -1,14 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './cart-drop-menu.styles.scss';
 import { Button } from '../Button/button';
 import { CartItem } from '../CartItem/cart-item';
-import { selectCartItems } from '../../redux/cart/cart-selectors';
+import { selectCartItems, selectIsCartOpen } from '../../redux/cart/cart-selectors';
 import { useNavigate } from 'react-router-dom'
+import { setIsCartOpen } from '../../redux/cart/cart-actions';
 
 export const CartDropMenu = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
+  const isCartOpen = useSelector(selectIsCartOpen);
   const nav = useNavigate();
+  
+  const toggleCart = () => dispatch(setIsCartOpen(!isCartOpen))
 
   const handleGoToCheckout = () => {
     nav('/checkout')
@@ -21,7 +26,10 @@ export const CartDropMenu = () => {
         <CartItem key={item.id} cartItem={item} />
         ))};
       </div>
-      <Button onClick={handleGoToCheckout}>Go to Checkout</Button>
+      <Button onClick={() => {
+          toggleCart();
+          handleGoToCheckout();
+        }}>Go To Checkout</Button>
     </div>
   )
 }

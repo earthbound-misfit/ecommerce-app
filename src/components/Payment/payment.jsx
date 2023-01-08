@@ -13,14 +13,13 @@ export const Payment = () => {
   const elements = useElements();
   const amount = useSelector(selectCartTotal);
   const currentUser = useSelector(selectCurrentUser);
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   const handlePayment = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) {
       return;
     }
-    setIsProcessingPayment(true);
+
     const response = await fetch('/.netlify/functions/create-payment-intent', {
       method: 'post',
       headers: {
@@ -42,7 +41,7 @@ export const Payment = () => {
       },
     });
 
-    setIsProcessingPayment(false);
+
 
     if (paymentResult.error) {
       alert(paymentResult.error.message);
