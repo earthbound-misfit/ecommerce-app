@@ -36,7 +36,7 @@ export const Navbar = () => {
     </Link>
        
           <Typography variant="h1" component="div" sx={{ flexGrow: 1, fontSize: '2.5rem', fontFamily: 'Comfortaa', textDecoration: 'none' }}>
-            BROKE NOMAD
+            WanderLust
           </Typography>
 
           

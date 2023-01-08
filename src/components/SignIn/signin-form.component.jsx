@@ -54,6 +54,7 @@ export const SignInForm = () => {
   }
 
   return (
+    <>
     <div className="sign-in-container">
       <h2 className="signin-header">Already part of the tribe?</h2>
       <h5>Sign in with email and password</h5>
@@ -86,10 +87,11 @@ export const SignInForm = () => {
           <Button onClick={signInWithGoogle} buttonType="google" type="button">Google Sign In</Button>
         </Link>
         </div>
-
       </form>
       </div>
     </div>
+   
+  </>
   )
 }
 

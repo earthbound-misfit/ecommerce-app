@@ -18,15 +18,14 @@ export const Category = () => {
   const title = category.toUpperCase()
   
   return (
-   <div className='outer-container'>
-    <h2 className='title-header'>{title}</h2>
-   <div className='category-container'>
-      {products &&
-        products.map((product) => <Product key={product.id} product={product} />)
-      }
-    </div>
-
-  </div>
+    <>
+     <h2 className='title-header'>{title}</h2>
+      <div className='category-container'>
+        {products &&
+          products.map((product) => <Product key={product.id} product={product} />)
+        }
+      </div>
+    </>
   )
 }
 

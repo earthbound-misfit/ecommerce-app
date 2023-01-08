@@ -22,9 +22,11 @@ export const CartDropMenu = () => {
   return (
     <div className='cart-drop-menu-container'>
       <div className='cart-items'>
-        {cartItems.map((item) => (
-        <CartItem key={item.id} cartItem={item} />
-        ))};
+        {cartItems.length ? (
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+        ) : (
+          <p className='empty-cart'>Your Cart is Empty</p>
+        )}
       </div>
       <Button onClick={() => {
           toggleCart();

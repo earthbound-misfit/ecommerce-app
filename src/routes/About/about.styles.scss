@@ -1,0 +1,33 @@
+.outer-container {
+  display: flex;
+  flex-direction: 'column';
+  justify-content: center;
+}
+
+.container {
+  display: 'block';
+  text-align: 'center';
+  margin-top: '25px';
+  justify-content: 'center';
+  align-content: center;
+  margin-top: 5%;
+}
+
+.header {
+  margin-top: '10px';
+  color: 'rgb(0,72,82)';
+  font-family: 'Comfortaa';
+  text-align: 'center';
+  text-transform: 'uppercase'
+}
+
+.image {
+  width: 400px;
+  
+}
+
+.paragraph {
+  width: 400px;
+  text-align: 'left';
+  font-family: 'Comfortaa'
+}
