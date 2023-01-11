@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
-
 import { selectCartTotal } from '../../redux/cart/cart-selectors';
 import { selectCurrentUser } from '../../redux/user/user-selectors';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Button } from '../Button/button'
-
 import './payment.styles.scss';
 
 export const Payment = () => {
-  const stripe = useStripe();
-  const elements = useElements();
   const amount = useSelector(selectCartTotal);
   const currentUser = useSelector(selectCurrentUser);
+  const stripe = useStripe();
+  const elements = useElements();
 
   const handlePayment = async (event) => {
     event.preventDefault();
@@ -32,22 +30,23 @@ export const Payment = () => {
 
     const clientSecret = response.paymentIntent.client_secret;
 
-    const paymentResult = await stripe.confirmCardPayment(clientSecret, {
+    const processPayment = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser ? currentUser.displayName : 'Kelly Karner',
+          name: currentUser ? currentUser.displayName : 'Guest',
+          // email: currentUser ? currentUser.email: 'Email'
         },
       },
     });
 
 
 
-    if (paymentResult.error) {
-      alert(paymentResult.error.message);
+    if (processPayment.error) {
+      alert(`Payment not processed. Error: ${processPayment.error.message}`);
     } else {
-      if (paymentResult.paymentIntent.status === 'succeeded') {
-        alert('Payment Successful!');
+      if (processPayment.paymentIntent.status === 'succeeded') {
+        alert('Success! Thank you for your payment!');
       }
     }
   };
