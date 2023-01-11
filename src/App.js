@@ -11,7 +11,8 @@ import { Navbar } from './components/Navbar/navbar'
 import { About } from '../src/routes/About/about';
 import { Authentication } from './routes/Authentication/authentication';
 import { Shop } from '../src/routes/Shop/shop';
-import { Checkout } from '../src/routes/Checkout/checkout'
+import { Checkout } from '../src/routes/Checkout/checkout';
+import { Favorites } from '../src/routes/Favorites/favorites'
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const App = () => {
       <Route path='/' element={<Navbar />}>
         <Route index element={<Home />} />
         <Route path='shop/*' element={<Shop />} />
+        <Route path='favorites' element={<Favorites />} />
         <Route path='auth' element={<Authentication />} />
         <Route path='checkout' element={<Checkout />} />
         <Route path='about' element={<About />} />

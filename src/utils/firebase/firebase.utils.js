@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth, 
@@ -113,6 +114,32 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 export const signOutUser = async () => await signOut(auth)
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
+
+
+export const getFavorites = () => {
+  const currentUser = firebaseApp.auth().currentUser
+  getFirestore()
+        .collection("users")
+        .doc(currentUser.uid)
+        .collection("favorites")
+        .get()
+  .then(querySnapshot => {
+  querySnapshot.forEach(documentSnapshot => {
+  // update state array with article id
+    });
+    
+  });
+  getFirestore()
+  .collection('favorites')
+  .where('id', 'in',['favorites'])
+  .get()
+  .then(querySnapshot => {
+  // updateState for div to map through and render
+  });
+}
+
+
+
 
 
 

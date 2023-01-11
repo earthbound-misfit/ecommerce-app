@@ -25,7 +25,7 @@ export const CartDropMenu = () => {
         {cartItems.length ? (
           cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
         ) : (
-          <p className='empty-cart'>Your Cart is Empty</p>
+          <div className='empty-cart'>Your Cart is Empty</div>
         )}
       </div>
       <Button onClick={() => {

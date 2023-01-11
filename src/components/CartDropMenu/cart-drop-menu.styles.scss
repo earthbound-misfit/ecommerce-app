@@ -11,6 +11,7 @@
   top: 60px;
   right: 30px;
   z-index: 5;
+  color: black;
 
   .empty-cart {
     font-size: 18px;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    color: black;
   }
 
   button {
