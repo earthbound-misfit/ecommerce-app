@@ -1,5 +1,5 @@
 import { CART_ACTION_TYPES } from "./cart-action-types";
-import { createAction } from '../../utils/reducer/reducer.utils'
+import { createAction } from "../reducer.utils";
 
 export const removeCartItem = (cartItems, cartItemToRemove) => {
   const itemInCart = cartItems.find(

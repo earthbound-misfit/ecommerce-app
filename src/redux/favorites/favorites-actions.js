@@ -1,5 +1,5 @@
 import { FAVORITES_ACTION_TYPES } from "./favorites-action-types";
-import { createAction } from '../../utils/reducer/reducer.utils'
+import { createAction } from "../reducer.utils";
 
 
 export const addFavoriteItem = (favoriteItems, productToAdd) => {
