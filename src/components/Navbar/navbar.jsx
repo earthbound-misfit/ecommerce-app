@@ -42,8 +42,6 @@ export const Navbar = () => {
           
            
                 <Button sx={{mx: 5, fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'Comfortaa'}} color="inherit" href='/shop'>Shop</Button>
-              
-                <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/shop/favorites'>Favorites</Button>
 
                 <Button sx={{mx: 1, fontFamily: 'Comfortaa' }} color="inherit" href='/about'>About</Button>
               
