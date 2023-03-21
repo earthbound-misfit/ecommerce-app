@@ -12,7 +12,6 @@ export const Product = ({product}) => {
   const { name, price, imageUrl } = product;
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
-  const [clickedHeart, setClickedHeart] = useState(false);
   
   const addToCart = () => dispatch(addItemToCart(cartItems, product));
 

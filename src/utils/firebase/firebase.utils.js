@@ -116,16 +116,28 @@ export const signOutUser = async () => await signOut(auth)
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
 
 
-export const getFavorites = (render) => {
-  const uid = firebaseApp.auth().currentUser.uid
-  const getFavorites = firebaseApp.functions().httpsCallable('getFavorites_v2');
-  getFavorites({uid: uid}).then(function(result) {
-    console.log(result);
-    result.data.forEach(favorite => {
-      render(favorite);
+export const getFavorites = () => {
+  const currentUser = firebaseApp.auth().currentUser
+  getFirestore()
+        .collection("users")
+        .doc(currentUser.uid)
+        .collection("favorites")
+        .get()
+  .then(querySnapshot => {
+  querySnapshot.forEach(documentSnapshot => {
+  // update state array with article id
     });
+    
   });
-};
+  getFirestore()
+  .collection('favorites')
+  .where('id', 'in',['favorites'])
+  .get()
+  .then(querySnapshot => {
+  // updateState for div to map through and render
+  });
+}
+
 
 
 
